@@ -18,7 +18,9 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-export const websocket_transport = () => {
+const WebSocket = require("ws");
+
+const websocket_transport = () => {
 	return {
 		dial: dial,
 		listen_on: (addr) => {
@@ -172,3 +174,5 @@ const read_queue = () => {
 		}
 	};
 };
+
+exports.websocket_transport = websocket_transport;
